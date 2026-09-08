@@ -411,7 +411,7 @@ void WieldMeshSceneNode::buildMesh(const ItemStack &item, Client *client, bool c
 		case NDT_PLANTLIKE:
 		case NDT_PLANTLIKE_ROOTED:
 		case NDT_FLOWINGLIQUID: {
-			v3f wscale = def.wield_scale;
+			v3f wscale = v3f(1.0f, 1.0f, 1.0f);
 			if (f.drawtype == NDT_FLOWINGLIQUID)
 				wscale.Z *= 0.1f;
 			setExtruded(tsrc->getTextureName(f.tiles[0].layers[0].texture_id),
