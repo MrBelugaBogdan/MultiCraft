@@ -386,7 +386,7 @@ void WieldMeshSceneNode::buildMesh(const ItemStack &item, Client *client, bool c
 	// If wield_image needs to be checked and is defined, it overrides everything else
 	const std::string &wield_image = item.getWieldImage(idef);
 	if (!wield_image.empty() && check_wield_image) {
-		setExtruded(wield_image, def.wield_overlay, def.wield_scale, tsrc,
+       setExtruded(wield_image, def.wield_overlay, v3f(1.0f, 1.0f, 1.0f), tsrc,
 			1);
 		m_colors.emplace_back();
 		// overlay is white, if present
