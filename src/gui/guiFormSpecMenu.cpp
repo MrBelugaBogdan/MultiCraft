@@ -314,9 +314,10 @@ void GUIFormSpecMenu::parseSize(parserData* data, const std::string &element)
 		if (parts[1].find(';') != std::string::npos)
 			parts[1] = parts[1].substr(0,parts[1].find(';'));
 
-		data->invsize.X = MYMAX(0, stof(parts[0]));
-		data->invsize.Y = MYMAX(0, stof(parts[1]));
-
+		// Обмежуємо максимальний розмір вікна, щоб уникнути зависання
+float max_size = 20.0f;  // або 30, або будь-яке безпечне значення
+data->invsize.X = MYMAX(0, MYMIN(stof(parts[0]), max_size));
+data->invsize.Y = MYMAX(0, MYMIN(stof(parts[1]), max_size));
 		lockSize(false);
 #ifndef HAVE_TOUCHSCREENGUI
 		if (parts.size() == 3) {
