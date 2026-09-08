@@ -460,8 +460,7 @@ void WieldMeshSceneNode::buildMesh(const ItemStack &item, Client *client, bool c
 
 	const std::string &inventory_image = item.getInventoryImage(idef);
 	if (!inventory_image.empty()) {
-		setExtruded(inventory_image, def.inventory_overlay, def.wield_scale,
-			tsrc, 1);
+		setExtruded(inventory_image, def.inventory_overlay, v3f(1.0f, 1.0f, 1.0f), tsrc, 1);
 		m_colors.emplace_back();
 		// overlay is white, if present
 		m_colors.emplace_back(true, video::SColor(0xFFFFFFFF));
