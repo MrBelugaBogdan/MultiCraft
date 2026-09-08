@@ -434,7 +434,7 @@ void WieldMeshSceneNode::buildMesh(const ItemStack &item, Client *client, bool c
 			postProcessCubeMesh(copy, f, shdrsrc, "object_shader", &m_colors);
 			changeToMesh(copy);
 			copy->drop();
-			m_meshnode->setScale(def.wield_scale * WIELD_SCALE_FACTOR);
+			m_meshnode->setScale(v3f(1.0f, 1.0f, 1.0f) * WIELD_SCALE_FACTOR);
 			break;
 		}
 		default:
