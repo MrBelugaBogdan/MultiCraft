@@ -443,8 +443,8 @@ void WieldMeshSceneNode::buildMesh(const ItemStack &item, Client *client, bool c
 			changeToMesh(mesh);
 			mesh->drop();
 			m_meshnode->setScale(
-				def.wield_scale * WIELD_SCALE_FACTOR
-				/ (BS * f.visual_scale));
+    v3f(1.0f, 1.0f, 1.0f) * WIELD_SCALE_FACTOR
+    / (BS * f.visual_scale));
 			break;
 		}
 
