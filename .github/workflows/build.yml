@@ -25,7 +25,7 @@ on:
       - 'util/buildbot/**'
       - 'util/ci/**'
       - '.github/workflows/**.yml'
-
+workflow_dispatch:
 jobs:
   # This is our minor gcc compiler
 #  gcc_6:
